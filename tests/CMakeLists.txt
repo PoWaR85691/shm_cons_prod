@@ -1,0 +1,78 @@
+find_package(doctest REQUIRED)
+
+add_executable(block_protocol_tests block_protocol_tests.cpp)
+target_link_libraries(block_protocol_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME block_protocol_tests COMMAND block_protocol_tests)
+
+add_executable(shared_memory_layout_tests shared_memory_layout_tests.cpp)
+target_link_libraries(shared_memory_layout_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME shared_memory_layout_tests COMMAND shared_memory_layout_tests)
+
+add_executable(codec_factory_tests codec_factory_tests.cpp)
+target_link_libraries(codec_factory_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME codec_factory_tests COMMAND codec_factory_tests)
+
+add_executable(none_codec_tests none_codec_tests.cpp)
+target_link_libraries(none_codec_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME none_codec_tests COMMAND none_codec_tests)
+
+add_executable(options_tests options_tests.cpp)
+target_link_libraries(options_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME options_tests COMMAND options_tests)
+
+add_executable(cli_tests cli_tests.cpp)
+target_include_directories(cli_tests PRIVATE ${CMAKE_SOURCE_DIR}/apps)
+target_link_libraries(cli_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME cli_tests COMMAND cli_tests)
+
+add_executable(zfp_codec_tests zfp_codec_tests.cpp)
+target_link_libraries(zfp_codec_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME zfp_codec_tests COMMAND zfp_codec_tests)
+
+add_executable(zstd_codec_tests zstd_codec_tests.cpp)
+target_link_libraries(zstd_codec_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME zstd_codec_tests COMMAND zstd_codec_tests)
+
+add_executable(pipeline_metrics_tests pipeline_metrics_tests.cpp)
+target_link_libraries(pipeline_metrics_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME pipeline_metrics_tests COMMAND pipeline_metrics_tests)
+
+add_executable(bounded_queue_tests bounded_queue_tests.cpp)
+target_link_libraries(bounded_queue_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME bounded_queue_tests COMMAND bounded_queue_tests)
+
+add_executable(ordered_queue_tests ordered_queue_tests.cpp)
+target_link_libraries(ordered_queue_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME ordered_queue_tests COMMAND ordered_queue_tests)
+
+add_executable(exception_store_tests exception_store_tests.cpp)
+target_link_libraries(exception_store_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME exception_store_tests COMMAND exception_store_tests)
+
+add_executable(float_file_reader_tests float_file_reader_tests.cpp)
+target_link_libraries(float_file_reader_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME float_file_reader_tests COMMAND float_file_reader_tests)
+
+add_executable(float_file_writer_tests float_file_writer_tests.cpp)
+target_link_libraries(float_file_writer_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME float_file_writer_tests COMMAND float_file_writer_tests)
+
+add_executable(ipc_error_tests ipc_error_tests.cpp)
+target_link_libraries(ipc_error_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME ipc_error_tests COMMAND ipc_error_tests)
+
+add_executable(spin_lock_tests spin_lock_tests.cpp)
+target_link_libraries(spin_lock_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME spin_lock_tests COMMAND spin_lock_tests)
+
+add_executable(shared_semaphore_tests shared_semaphore_tests.cpp)
+target_link_libraries(shared_semaphore_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME shared_semaphore_tests COMMAND shared_semaphore_tests)
+
+add_executable(shared_memory_segment_tests shared_memory_segment_tests.cpp)
+target_link_libraries(shared_memory_segment_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME shared_memory_segment_tests COMMAND shared_memory_segment_tests)
+
+add_executable(shared_memory_channel_tests shared_memory_channel_tests.cpp)
+target_link_libraries(shared_memory_channel_tests PRIVATE fast_channel_core doctest::doctest)
+add_test(NAME shared_memory_channel_tests COMMAND shared_memory_channel_tests)
